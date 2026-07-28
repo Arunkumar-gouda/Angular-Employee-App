@@ -1,0 +1,41 @@
+<div class="form-page mx-auto">
+  <a class="back-link" routerLink="/employees">← Back to employees</a>
+  <div class="mt-4 mb-4">
+    <span class="eyebrow">{{ isEditing ? 'Employee profile' : 'New team member' }}</span>
+    <h1 class="page-title mt-2 mb-1">{{ isEditing ? 'Edit employee' : 'Add employee' }}</h1>
+    <p class="text-secondary mb-0">{{ isEditing ? 'Update this employee’s information below.' : 'Enter the details below to add someone to your team.' }}</p>
+  </div>
+
+  <section class="card form-card border-0 shadow-sm">
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <div class="row g-4">
+        <div class="col-12">
+          <label class="form-label" for="name">Full name</label>
+          <input class="form-control" [class.is-invalid]="isInvalid('name')" id="name" type="text" formControlName="name" placeholder="e.g. Avery Johnson" autocomplete="name">
+          <div class="invalid-feedback">Please enter at least 2 characters.</div>
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="email">Email address</label>
+          <input class="form-control" [class.is-invalid]="isInvalid('email')" id="email" type="email" formControlName="email" placeholder="avery@company.com" autocomplete="email">
+          <div class="invalid-feedback">Please enter a valid email address.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="department">Department</label>
+          <select class="form-select" [class.is-invalid]="isInvalid('department')" id="department" formControlName="department">
+            <option value="" disabled>Select department</option>
+            @for (department of departments; track department) { <option [value]="department">{{ department }}</option> }
+          </select>
+          <div class="invalid-feedback">Please select a department.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="salary">Annual salary</label>
+          <div class="input-group" [class.has-validation]="isInvalid('salary')"><span class="input-group-text">$</span><input class="form-control" [class.is-invalid]="isInvalid('salary')" id="salary" type="number" formControlName="salary" min="1" step="1000" placeholder="75,000"><div class="invalid-feedback">Salary must be greater than zero.</div></div>
+        </div>
+      </div>
+      <div class="form-actions d-flex justify-content-end gap-2 mt-4 pt-4">
+        <a class="btn btn-outline-secondary px-4" routerLink="/employees">Cancel</a>
+        <button class="btn btn-primary px-4" type="submit">{{ isEditing ? 'Save changes' : 'Add employee' }}</button>
+      </div>
+    </form>
+  </section>
+</div>
