@@ -1,6 +1,6 @@
 # StaffSpace Employee Management
 
-A complete Angular 20 standalone application for managing employee records. It includes routed list, add, and edit screens; reactive form validation; local persistence; and responsive Bootstrap styling.
+A complete Angular 20 standalone application for managing employee records. It includes a statistics dashboard, routed list, add, and edit screens; reactive form validation; local persistence; and responsive Bootstrap styling.
 
 ## Run locally
 

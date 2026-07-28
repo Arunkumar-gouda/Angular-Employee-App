@@ -1,11 +1,12 @@
 <header class="app-header">
   <nav class="navbar navbar-expand-md navbar-dark container py-3" aria-label="Primary navigation">
-    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/employees">
+    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/dashboard">
       <span class="brand-mark" aria-hidden="true">S</span>
       <span>StaffSpace</span>
     </a>
-    <div class="ms-auto d-flex align-items-center gap-2">
-      <a class="nav-link d-none d-sm-inline-block" routerLink="/employees" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Employees</a>
+    <div class="ms-auto d-flex align-items-center gap-2 gap-md-3">
+      <a class="nav-link d-none d-sm-inline-block" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a class="nav-link d-none d-sm-inline-block" routerLink="/employees" routerLinkActive="active">Employees</a>
       <a class="btn btn-light btn-sm px-3" routerLink="/employees/add">+ Add employee</a>
     </div>
   </nav>

@@ -13,6 +13,19 @@ body { margin: 0; min-height: 100vh; background: var(--canvas); color: var(--ink
 .btn { border-radius: 9px; font-weight: 600; }
 .btn-primary { --bs-btn-bg: var(--primary); --bs-btn-border-color: var(--primary); --bs-btn-hover-bg: var(--primary-dark); --bs-btn-hover-border-color: var(--primary-dark); }
 .card { border-radius: 16px; }
+.stat-card { overflow: hidden; position: relative; }
+.stat-card::after { position: absolute; inset: auto 0 0; height: 4px; background: linear-gradient(90deg, var(--primary), #9b74ee); content: ''; }
+.stat-card .card-body { padding: 1.6rem; }
+.stat-label { color: var(--muted); font-size: .88rem; font-weight: 600; }
+.stat-value { color: var(--ink); font: 800 clamp(2rem, 6vw, 2.6rem) 'Manrope', sans-serif; letter-spacing: -.04em; }
+.stat-caption, .stat-link { color: #8790a1; font-size: .8rem; text-decoration: none; }
+.stat-link { color: var(--primary); font-weight: 600; }
+.stat-link:hover { color: var(--primary-dark); }
+.stat-icon { display: inline-grid; place-items: center; flex: 0 0 auto; width: 52px; height: 52px; border-radius: 15px; font-size: 1.35rem; font-weight: 800; }
+.stat-icon-primary { background: #edf0ff; color: #5367ed; }
+.stat-icon-purple { background: #f4edff; color: #8659c9; }
+.stat-icon-green { background: #e9f8f1; color: #249268; }
+.dashboard-cta .card-body { padding: 1.5rem 1.6rem; }
 .card-toolbar { padding: 1.25rem 1.5rem; border-bottom: 1px solid #e9edf3; }
 .search-box { display: flex; align-items: center; gap: .5rem; min-width: min(100%, 270px); padding: .55rem .8rem; border: 1px solid #dce1e9; border-radius: 9px; color: var(--muted); background: white; }
 .search-box input { width: 100%; border: 0; outline: 0; color: var(--ink); }
